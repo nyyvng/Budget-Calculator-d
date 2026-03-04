@@ -4,12 +4,19 @@
     --Cyan: #1BEDCA;
     --Light-Yellow: #F1C40F;
     --Light-Green: #D8E2DC;
-    --Highlight-Blue: #1BEDCA;
+    --Highlight-Blue: #A8DADC;
     --Blue: #457B9D;
     --Shadow-Blue: #1D3557;
     --Dark-Yellow: #F9C74F;
     --Orange: #F3722C;
     --Green: #2A9D8F;
+    --Border-Radius: 15px;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
 }
 
 body {
@@ -59,5 +66,60 @@ h1 {
 .Planner {
     display:flex;
     flex-direction:row;
-    
+    background-color: var(--Light-Green);
+    width: 95vw;
+    justify-content: center;
+    justify-self: center;
+    border-radius: var(--Border-Radius);
+    box-shadow: 20px 20px 0 black;
+}
+
+input {
+    background-color: var(--Off-White);
+    border: 0;
+    box-shadow: 5px 5px 0 black;
+    border-radius: var(--Border-Radius);
+}
+
+input::placeholder {
+    color: var(--Light-Green);
+}
+
+#Next , #Done {
+    background-color: var(--Highlight-Blue);
+    border: 0;
+    /* Put the width of the button when separating pages AKA post javascript */
+    box-shadow: 5px 5px 0 black;
+    /* Border radius looks weird rn but once button is bigger the radius will look fine */
+    border-radius: var(--Border-Radius);
+    color: black;
+}
+
+
+
+.Information {
+    display: flex;
+    background-color: var(--Light-Green);
+    width: 95vw;
+    justify-content: center;
+    justify-self: center;
+    border-radius: var(--Border-Radius);
+    box-shadow: 20px 20px 0 black;
+    margin-top: 50px;
+}
+
+.InfoList {
+    display: flex;
+    flex-direction: column;
+}
+
+div p {
+    font-weight: 700;
+    font-size: 30px;
+}
+
+.InfoList div {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
 }
