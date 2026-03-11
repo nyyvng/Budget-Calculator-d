@@ -124,6 +124,20 @@ h1 {
         height: var(--step-size);
     }
 }
+.stepItem {
+    --icon-size: 50px;
+    width: var(--icon-size);
+    height: var(--icon-size);
+    & img {
+        --icon-size: 50px;
+        width: var(--icon-size);
+        height: var(--icon-size);
+    }
+}
+.lineItem {
+    width: 50px;
+    margin-bottom: 25px;
+}
 
 /* Make the line stuff */
 #stepCounter button:not(:last-child):after {
