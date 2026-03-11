@@ -54,8 +54,19 @@ function navigate(section) {
  */
 
 function sum(inputs) {
-    // FIX THIS AHHHHHH
-    return [...inputs.filter((word) => !word.classList.includes("net-input", ""))].reduce((a, b) => a + b.valueAsNumber, 0);
+
+    const arr = Array.from(inputs);
+    if (arr.length === 0) return 0;
+
+    const article = arr[0].closest('article');
+    if (article && article.classList.contains('income')) {
+        return 0;
+    }
+
+    return arr.reduce((total, input) => {
+        const n = Number(input.value);
+        return total + (Number.isFinite(n) ? n : 0);
+    }, 0);
 }
 
 // Donut chart
