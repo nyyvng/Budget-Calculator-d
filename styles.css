@@ -84,6 +84,9 @@ h1 {
     }
 }
 
+
+
+/* Main Content */
 .planner {
     display: flex;
     flex-direction: row;
@@ -94,6 +97,41 @@ h1 {
     margin-top: 120px;
     border-radius: var(--Border-Radius);
     box-shadow: 20px 20px 0 black;
+}
+
+/* Step Counter */
+#stepCounter {
+    display: flex;
+    place-content: center;
+    gap: 7em;
+
+    margin-top: 50px;
+
+    & button {
+        background-color: #1bedca00;
+        border: 0;
+        
+        & img {
+            --step-size: 50px;
+            width: var(--step-size);
+            height: var(--step-size);
+        }
+    }
+
+    & img {
+        --step-size: 50px;
+        width: var(--step-size);
+        height: var(--step-size);
+    }
+}
+
+/* Make the line stuff */
+#stepCounter button:not(:last-child):after {
+    content: "";
+    width: 6em;
+    border: 2px solid black;
+    position: absolute;
+    transform: translate(1em, 1.85em);
 }
 
 input {
