@@ -26,6 +26,14 @@ reset.addEventListener('click', () => {
 });
 
 
+// Step Counter JS
+const arrayOfSteps = document.querySelectorAll(".stepItem")
+for (const stepButton of arrayOfSteps) {
+    stepButton.addEventListener("click", () => {
+        navigate(stepButton.getAttribute("navTo"))
+    })
+}
+
 // Setting sections to be visible or not visible based on current_section variable
 /**
  * @param {number} section
@@ -36,15 +44,40 @@ function navigate(section) {
     }
     articles[current_section].classList.remove('current');
     articles[(current_section = section)].classList.add('current');
+    
+    // Hide next button if on last page
     if (current_section === articles.length - 1) {
         next.classList.add('hidden');
     } else {
         next.classList.remove('hidden');
     }
+    // Hide back button if on last page
     if (current_section === 0) {
         back.classList.add('hidden');
     } else {
         back.classList.remove('hidden');
+    }
+
+    // Change inmages of step counter
+    for (const stepButton of arrayOfSteps) {
+        const buttonImg = stepButton.children[0]
+
+        // Yes, I used a strange method for filling and unfilling images. 
+            // I had to export new images for unfilled icons
+        // Make sure we're not changing the first one since that's always filled
+        if (stepButton.getAttribute("navTo") != 0) {
+            if (stepButton.getAttribute("navTo") <= current_section) {
+                 // For sections we're on or past, fill image in
+                const filledImg = buttonImg.getAttribute("filled")
+                buttonImg.setAttribute("src", filledImg)
+            } else {
+                 // For sections we're not at yet, unfill image
+                const unfilledImg = buttonImg.getAttribute("unfilled")
+                buttonImg.setAttribute("src", unfilledImg)
+            }
+        }
+
+        // I have a note in HTML for coding functionality for future icons
     }
 }
 

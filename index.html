@@ -11,15 +11,58 @@
 </head>
 
 <body>
-    <nav id="nav">
-        <img src="Images\Group 18.svg">
-        <div>
-            <a class="home" href="index.html">Home</a>
-            <a class="info" href="extra.html">Info.</a>
-        </div>
-    </nav>
+    <header>
+        <nav id="nav">
+            <img src="Images\Group 18.svg">
+            <div>
+                <a class="home" href="index.html">Home</a>
+                <a class="info" href="extra.html">Info.</a>
+            </div>
+        </nav>
+    </header>
     <h1 class="title">BUDGET PLANNER</h1>
     <span class="planner">
+        <!--Step Counter-->
+        <section id="stepCounter">
+            <button class="stepItem" navTo="0">
+                <img src="images/CurrencyCircleDollar.svg">
+            </button>
+            <button class="stepItem" navTo="1">
+                <img 
+                unfilled="images/UnfilledImages/UnfilledHouse.svg"
+                filled="images/FilledImages/FilledHouse.svg"
+                src="images/UnfilledImages/UnfilledHouse.svg">
+            </button>
+            <button class="stepItem" navTo="2">
+                <img 
+                unfilled="images/UnfilledImages/UnfilledHeart.svg"
+                filled="images/FilledImages/FilledHeart.svg"
+                src="images/UnfilledImages/UnfilledHeart.svg">
+            </button>
+            <button class="stepItem" navTo="3">
+                <img 
+                unfilled="images/UnfilledImages/UnfilledCar.svg"
+                filled="images/FilledImages/FilledCar.svg"
+                src="images/UnfilledImages/UnfilledCar.svg">
+            </button>
+            <button class="stepItem" navTo="4">
+                <img 
+                unfilled="images/UnfilledImages/UnfilledBook.svg"
+                filled="images/FilledImages/FilledBook.svg"
+                src="images/UnfilledImages/UnfilledBook.svg">
+            </button>
+
+            <!--I'm assuming you have more buttons for other sections after the book-->
+
+            <!-- Give the previous sections a class and hit them with a display: none in CSS,
+             remove that class from the next section icon you want to show.-->
+
+             <!-- Follow the attribute scheme for images above for filled/unfilled images, 
+              if you need that for the other buttons. Change JS a bit if you don't...-->
+        
+            <img src="images/Arrow.svg">
+        </section>
+
         <article class="income current">
             <!--For every article, before the h2 of each article put step counter using JS-->
             <h2>Income</h2>
@@ -226,19 +269,19 @@
                 <p>Income</p>
             </div>
             <div class="houseSimple">
-                <img src="Images\HouseSimple.svg">
+                <img src="Images/FilledImages/FilledHouse.svg">
                 <p>Housing and Living Expenses</p>
             </div>
             <div class="heartStraight">
-                <img src="Images\HeartStraight.svg">
+                <img src="Images/FilledImages/FilledHeart.svg">
                 <p>Health</p>
             </div>
             <div class="carProfile">
-                <img src="Images\CarProfile.svg">
+                <img src="Images/FilledImages/FilledCar.svg">
                 <p>Auto and Transportation</p>
             </div>
             <div class="bookPic">
-                <img src="Images\Book.svg">
+                <img src="Images/FilledImages/FilledBook.svg">
                 <p>Education</p>
             </div>
             <div class="creditCardPic">
